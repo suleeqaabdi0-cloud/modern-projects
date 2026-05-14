@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fresh Vegetables & Fruits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-box">
+ 
+  
+    <div id="loginBox">
+      <h2>🔐 Login</h2>
+      <input type="text" id="loginUsername" placeholder="Username">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p class="switch-text">
+        Ma lihid account?
+        <span onclick="showRegister()">Create Account</span>
+      </p>
+    </div>
+ 
+   
+    <div id="registerBox" style="display:none;">
+      <h2>📝 Create Account</h2>
+      <input type="text" id="registerUsername" placeholder="Username">
+      <input type="email" id="registerEmail" placeholder="Email">
+      <input type="password" id="registerPassword" placeholder="Password">
+      <button onclick="register()">Register</button>
+      <p class="switch-text">
+        Already have account?
+        <span onclick="showLogin()">Login</span>
+      </p>
+    </div>
+ 
+  </div>
+</div>
+ 
+
+<header>
+  <div class="logo"><span>🌿</span> Fresh Market</div>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 Basketka
+      <div id="cart-count">0</div>
+    </button>
+    <button class="cart-btn" onclick="logout()">Logout</button>
+  </div>
+</header>
+ 
+
+<section class="hero">
+  <h1>Khudrad & Miro<br>Cusub oo Daawo! 🥦🍓</h1>
+  <p>Alaabta ugu fiican, tazayidka ugu hooseeya. Guri ku dhufo!</p>
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Raadi khudrad ama miro..." oninput="filterProducts()"/>
+    <button onclick="filterProducts()">🔍</button>
+  </div>
+</section>
+ 
+
+<div class="filters">
+  <button class="filter-btn active" onclick="setFilter('all', this)">🌟 Dhammaan</button>
+  <button class="filter-btn" onclick="setFilter('vegetable', this)">🥦 Khudrad</button>
+  <button class="filter-btn" onclick="setFilter('fruit', this)">🍓 Miro</button>
+  <button class="filter-btn" onclick="setFilter('tropical', this)">🌴 Tropical</button>
+  <button class="filter-btn" onclick="setFilter('citrus', this)">🍋 Citrus</button>
+</div>
+ 
+
+<h2 class="section-title" id="section-label">Alaab Dhammaan</h2>
+<div class="products-grid" id="products-grid"></div>
+ 
+
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+ 
+
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-header">
+    <h2>🛒 Basketkayga</h2>
+    <button class="close-cart" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total">
+      <span>Wadarta:</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+    <button class="checkout-btn" onclick="checkout()">✅ Iibsi Hada</button>
+    <button class="clear-btn" onclick="clearCart()">🗑️ Nadiifi Basket</button>
+  </div>
+</div>
+ 
+
+<div class="toast" id="toast"></div>
+ 
+
+<footer class="footer">
+  <div class="footer-container">
+ 
+    <div class="footer-box">
+      <h2>🌿 Fresh Market</h2>
+      <p>Fresh Market waa goob kuu keenta khudrad iyo miro cusub oo tayo leh.</p>
+    </div>
+ 
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Cart</a>
+      <a href="#">Contact</a>
+    </div>
+ 
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>📍 Mogadishu, Somalia</p>
+      <p>📞 +252 61 0000000</p>
+      <p>✉️ freshmarket@gmail.com</p>
+    </div>
+ 
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <div class="socials">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+        <a href="#">▶️</a>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <div class="footer-bottom">
+    © 2026 Fresh Market
+  </div>
+</footer>
+ 
+<script src="app.js"></script>
+</body>
+</html>
